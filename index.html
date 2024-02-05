@@ -1,159 +1,345 @@
+<!--05-06 Imágenes
+En esta práctica debes ingresar varias imágenes en una página web y comparar el tiempo de carga hasta minimizarlo por completo.
+Utiliza sitios libres de derechos para descargar 12 imágenes con la resolución más alta posible. Incluye formatos JPG, GIF y PNG. 
+Crear una página web para organizar las imágenes usando el modelo flexbox, de modo que quepan dos imágenes por ancho.Obtendrás 6 filas de dos imágenes por fila. NO CAMBIAR EL TAMAÑO ORIGINAL.
+Agregue etiquetas ALT a todas las imágenes. Respeta el copyleft utilizando las etiquetas apropiadas para dar el crédito necesario al autor de la imagen.
+Crear un proyecto en Github y publicar la página. Siga el siguiente manual:https://docs.github.com/es/pages/getting-started-with-github-pages/creating-a-github-pages-site
+Usar herramientas de Google (https://pagespeed.web.dev/) para comprobar el tiempo de carga de la página, crear una tabla e indicar el tamaño medio, formato de imagen utilizado y tiempo de carga.Agregue la tabla a la página web.
+
+CAPTURA EL PRIMER PANTALLAZO
+
+COPIAR LA PÁGINA WEB EN OTRA.Optimiza el tamaño Y EL FORMATO (INVESTIGA SOBRE NUEVOS FORMATOS) de las imágenes. Utiliza etiquetas PICTURE, SRCSET y MEDIA para incluir distintos tamaños y formatos de imagen.  Realiza nuevamente la prueba de tiempo de carga y actualiza los datos de la tabla.
+COPIA LA ÚLTIMA PÁGINA WEB EN OTRA.Ahora seguiremos los consejos de la página de Google. en cuanto a formatos.Puedes utilizar la herramienta gráfica que quieras para configurarlos, a modo de ejemplo aquí tienes varias: https://www.dosmedia.com/tratamiento-de-imagenes-para-tu-pagina-web/
+Aplicación de Estilos CSS:
+Usar object-fit y object-position para asegurar que las imágenes se muestren correctamente en su contenedor.
+Implementar srcset y sizes en las imágenes para hacerlas responsivas en diferentes tamaños de pantalla.
+Utilizar la etiqueta <picture> para algunas imágenes, ofreciendo diferentes formatos según el navegador.
+Efectos Visuales Adicionales:
+Aplicar diferentes filters a algunas imágenes para cambiar su apariencia (por ejemplo, sepia, grayscale).
+Utilizar opacity en algunas imágenes para crear un efecto de transparencia.
+Implementar clip-path en al menos una imagen para darle una forma única.
+Añadir border-image a alguna imagen para mostrar cómo se puede usar una imagen como borde.
+Responsividad:
+Asegurarse de que la galería se vea bien en diferentes tamaños de pantalla, incluyendo teléfonos móviles y tablets.
+Interactividad:
+Agregar interactividad con JavaScript, cómo cambiar la opacidad o el filtro al pasar el mouse sobre las imágenes.
+ENTREGA:  una sóla imagen con DOS capturas de pantalla de Google Insight, una antes de optimizar y otra después   (junta las dos en una sola) y un  sólo  documento  HTML con el código final.-->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <style>
-        /* 6 fillas y dos columnas*/
-        .contenedor{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            justify-items: center;
+      /* 6 fillas y dos columnas*/
+      .contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        justify-items: center;
+      }
+      .imagenes {
+        width: 20rem;
+        height: 30rem;
 
-            
-        }
-        .imagenes {
-            width: 20rem;
-            height: 30rem;
-            
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-        }
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+      }
 
-        table{
-            margin: 0 auto;
-            border: 1px solid black;
-            text-align: center;
-            border-collapse: collapse;
-        }
-        th, td{
-            border: 1px solid black;
-            padding: 1rem;
-        }
+      table {
+        margin: 0 auto;
+        border: 1px solid black;
+        text-align: center;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 1rem;
+      }
 
+      .imagenes {
+        width: 20rem;
+        height: 30rem;
+        text-align: center;
+        overflow: hidden;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .imagenes {
+        width: 20rem;
+        height: 30rem;
+        text-align: center;
+        overflow: hidden;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: sepia(100%) grayscale(100%);
+        opacity: 0.5;
+        
+      }
+      #poligono img {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+        
+        
+      }
+      #poligono{
+        border: 1px solid;
+        border-image: url("/imagenes/borde1.png") 50 round;
+      }
+
+      @media (max-width: 768px) {
+        .contenedor {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
     </style>
     <div class="contenedor">
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/1.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/1.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/1.webp" alt="foto1">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/2.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/2.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/2.webp" alt="foto2">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/3.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/3.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/3.webp" alt="foto3">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/4.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/4.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/4.webp" alt="foto4">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/5.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/5.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/5.webp" alt="foto5">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/6.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/6.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/6.webp" alt="foto6">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/7.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/7.jpg" type="image/jpeg" media="(min-width: 1200px)">
-               
-                <img src="imagenes/7.webp" alt="foto7">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/8.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/8.jpg" type="image/jpeg" media="(min-width: 1200px)">
-            
-                <img src="imagenes/8.webp" alt="foto8">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/9.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/9.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/9.webp" alt="foto9">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/10.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/10.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/10.webp" alt="foto10">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/11.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/11.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/11.webp" alt="foto11">
-            </picture>
-        </div>
-        <div class="imagenes">
-            <picture>
-                <source srcset="imagenes/12.webp" type="image/webp" media="(min-width: 1200px)">
-                <source srcset="imagenes/12.jpg" type="image/jpeg" media="(min-width: 1200px)">
-                
-                <img src="imagenes/12.webp" alt="foto12">
-            </picture>
-        </div>
-    </div>    
+      <div class="imagenes" id="poligono">
+        <picture>
+          <source
+            srcset="imagenes/1.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/1.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
 
-    <div>
-        <table>
-            <tr>
-                <th>Imagenes</th>
-                <th>Caracteristicas</th>
-                <th>Tiempo de Carga</th>
-            <tr>
-                <td>formato de imagen jpg</td>
-                <td>tamano medio de 67MB</td>
-                <td>14,1 seg</td>
-            </tr>
-            
-        </table>
-        
+          <img src="imagenes/1.webp" alt="foto1" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/2.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/2.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/2.webp" alt="foto2" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/3.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/3.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/3.webp" alt="foto3" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/4.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/4.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/4.webp" alt="foto4" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/5.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/5.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/5.webp" alt="foto5" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/6.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/6.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/6.webp" alt="foto6" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/7.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/7.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/7.webp" alt="foto7" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/8.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/8.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/8.webp" alt="foto8" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/9.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/9.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/9.webp" alt="foto9" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/10.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/10.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/10.webp" alt="foto10" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/11.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/11.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/11.webp" alt="foto11" />
+        </picture>
+      </div>
+      <div class="imagenes">
+        <picture>
+          <source
+            srcset="imagenes/12.webp"
+            type="image/webp"
+            media="(min-width: 1200px)"
+          />
+          <source
+            srcset="imagenes/12.jpg"
+            type="image/jpeg"
+            media="(min-width: 1200px)"
+          />
+
+          <img src="imagenes/12.webp" alt="foto12" />
+        </picture>
+      </div>
     </div>
 
-    <footer><p>Imagenes de <a href="https://www.freepik.es/foto-gratis/mujer-talla-grande-tiro-completo-estirando_38169980.htm">Freepik</a></p></footer>
-</body>
+    <div>
+      <table>
+        <tr>
+          <th>Imagenes</th>
+          <th>Caracteristicas</th>
+          <th>Tiempo de Carga</th>
+        </tr>
+
+        <tr>
+          <td>formato de imagen jpg</td>
+          <td>tamano medio de 67MB</td>
+          <td>14,1 seg</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <p>
+        Imagenes de
+        <a
+          href="https://www.freepik.es/foto-gratis/mujer-talla-grande-tiro-completo-estirando_38169980.htm"
+          >Freepik</a
+        >
+      </p>
+    </footer>
+    <script>
+      const images = document.querySelectorAll(".imagenes img");
+
+      images.forEach((image) => {
+        image.addEventListener("mouseover", () => {
+          image.style.opacity = "0.5";
+          image.style.filter = "grayscale(100%)";
+        });
+
+        image.addEventListener("mouseout", () => {
+          image.style.opacity = "1";
+          image.style.filter = "none";
+        });
+      });
+    </script>
+  </body>
 </html>
