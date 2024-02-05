@@ -27,21 +27,132 @@
             max-width: 100%;
         }
 
+        table{
+            margin: 0 auto;
+            border: 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+
     </style>
     <div class="contenedor">
-        <div class="imagenes"><img src="imagenes/1.jpg" alt="foto1"></div>
-        <div class="imagenes"><img src="imagenes/2.jpg" alt="foto2"></div>
-        <div class="imagenes"><img src="imagenes/3.jpg" alt="foto3"></div>
-        <div class="imagenes"><img src="imagenes/4.jpg" alt="foto4"></div>
-        <div class="imagenes"><img src="imagenes/5.jpg" alt="foto5"></div>
-        <div class="imagenes"><img src="imagenes/6.jpg" alt="foto6"></div>
-        <div class="imagenes"><img src="imagenes/7.jpg" alt="foto7"></div>
-        <div class="imagenes"><img src="imagenes/8.jpg" alt="foto8"></div>
-        <div class="imagenes"><img src="imagenes/9.jpg" alt="foto9"></div>
-        <div class="imagenes"><img src="imagenes/10.jpg" alt="foto10"></div>
-        <div class="imagenes"><img src="imagenes/11.jpg" alt="foto11"></div>
-        <div class="imagenes"><img src="imagenes/12.jpg" alt="foto12"></div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/1.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/1.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/1.webp" alt="foto1">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/2.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/2.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/2.webp" alt="foto2">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/3.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/3.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/3.webp" alt="foto3">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/4.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/4.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/4.webp" alt="foto4">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/5.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/5.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/5.webp" alt="foto5">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/6.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/6.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/6.webp" alt="foto6">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/7.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/7.jpg" type="image/jpeg" media="(min-width: 1200px)">
+               
+                <img src="imagenes/7.webp" alt="foto7">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/8.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/8.jpg" type="image/jpeg" media="(min-width: 1200px)">
+            
+                <img src="imagenes/8.webp" alt="foto8">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/9.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/9.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/9.webp" alt="foto9">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/10.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/10.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/10.webp" alt="foto10">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/11.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/11.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/11.webp" alt="foto11">
+            </picture>
+        </div>
+        <div class="imagenes">
+            <picture>
+                <source srcset="imagenes/12.webp" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="imagenes/12.jpg" type="image/jpeg" media="(min-width: 1200px)">
+                
+                <img src="imagenes/12.webp" alt="foto12">
+            </picture>
+        </div>
     </div>    
+
+    <div>
+        <table>
+            <tr>
+                <th>Imagenes</th>
+                <th>Caracteristicas</th>
+                <th>Tiempo de Carga</th>
+            <tr>
+                <td>formato de imagen jpg</td>
+                <td>tamano medio de 67MB</td>
+                <td>14,1 seg</td>
+            </tr>
+            
+        </table>
+        
+    </div>
 
     <footer><p>Imagenes de <a href="https://www.freepik.es/foto-gratis/mujer-talla-grande-tiro-completo-estirando_38169980.htm">Freepik</a></p></footer>
 </body>
